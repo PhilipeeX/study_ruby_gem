@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary = "This RubyGem provides a collection of Ruby exercises and logic puzzles, accompanied by corresponding RSpec tests."
   spec.description = "It serves as a learning resource for improving programming skills and enhancing logical thinking through hands-on practice. The exercises cover various concepts, algorithms, and problem-solving techniques in Ruby, making it an ideal tool for beginners and intermediate developers seeking to strengthen their proficiency in the language."
-  spec.homepage = "Put your gem's website or public repo URL here."
+  spec.homepage = "https://github.com/PhilipeeX/study_ruby_gem"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/PhilipeeX/study_ruby_gem"
+  spec.metadata["changelog_uri"] = "https://github.com/PhilipeeX/study_ruby_gem/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -34,7 +34,6 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
-  
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
