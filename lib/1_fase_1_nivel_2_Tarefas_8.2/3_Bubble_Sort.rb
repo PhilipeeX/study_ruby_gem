@@ -1,20 +1,19 @@
 class BubbleSortAlgorithm
   def self.bubble_sort(array)
-    j = 0
-    while j < array.size
-      maior = 0
-      i = 0
-      while i < array.length
-        if array[i] > maior
-          maior = array[i]
-        else
-          array[i - 1] = array[i]
-          array[i] = maior
+    n = array.length
+    return array if n <= 1
+
+    sorted = false
+    while !sorted
+      sorted = true
+      (n - 1).times do |i|
+        if array[i] > array[i + 1]
+          array[i], array[i + 1] = array[i + 1], array[i]
+          sorted = false
         end
-        i += 1
       end
-      j += 1
     end
-    p array
+
+    array
   end
 end
