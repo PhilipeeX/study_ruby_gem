@@ -1,23 +1,41 @@
-@array = [1, -2, 3, -4, 5]
+class MinimumProductSubset
+  def self.minimum_product(array)
 
-def minimum_product(array)
+    n = array.size
 
-  # If there are even number of negative numbers and no zeros, the result is the product of all except the largest
-  # valued negative number.
-  if array.count(&:negative?).even? && array.none?(&:zero?)
-    array.delete(array.min)
-    return array.reduce { |result, element| result * element }
+  return array[0] if n == 1
 
-  # If there are an odd number of negative numbers and no zeros, the result is simply the product of all.
-  elsif array.count(&:negative?).odd? && array.none?(&:zero?)
-    return array.reduce { |result, element| result * element }
+  negmax = -Float::INFINITY
+  posmin = Float::INFINITY
+  count_neg = 0
+  count_zero = 0
+  product = 1
 
-  # If there are zeros and positive, no negative, the result is 0.
-  elsif array.any?(&:zero?) && array.none?(&:negative?)
-    return 0
+  array.each do |num|
+    if num == 0
+      count_zero += 1
+      next
+    end
+
+    if num < 0
+      count_neg += 1
+      negmax = [negmax, num].max
+    end
+
+    posmin = num if num > 0 && num < posmin
+
+    product *= num
   end
 
-  array.min
+  return 0 if count_zero == n || (count_neg == 0 && count_zero > 0)
+
+  return posmin if count_neg == 0
+
+  if count_neg.even? && count_neg != 0
+    product /= negmax.to_i
+  end
+
+  product
+  end
 end
 
-minimum_product(@array)
