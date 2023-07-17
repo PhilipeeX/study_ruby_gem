@@ -1,8 +1,10 @@
-def missing_characters(string)
-  alphabet = ('a'..'z').to_a
+class MissingCharacters
+  def self.missing_characters(string)
+    alphabet = ('a'..'z').to_a
 
-  present_letters = string.downcase.scan(/[a-z]/).uniq
-  alphabet -= present_letters
+    present_letters = string.downcase.scan(/[a-z]/).uniq
+    alphabet -= present_letters
 
-  alphabet.join('')
+    alphabet.join('')
+  end
 end
