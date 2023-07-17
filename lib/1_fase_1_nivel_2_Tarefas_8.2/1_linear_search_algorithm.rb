@@ -1,8 +1,8 @@
 class LinearSearchAlgorithm
-  def self.find_element(element)
+  def self.find_element(arr, element)
     i = 0
-    while i < @array.length
-      return "O elemento está presente no índice: #{i}" if @array[i] == element
+    while i < arr.length
+      return i if arr[i] == element
 
       i += 1
     end
